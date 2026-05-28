@@ -29,8 +29,8 @@ const config: Config = {
         display: ["var(--font-syne)", "Plus Jakarta Sans", "sans-serif"],
       },
       fontSize: {
-        'display-xl': ['clamp(56px, 8vw, 100px)', { letterSpacing: '-0.03em' }],
-        'display-l': ['clamp(36px, 5vw, 68px)', { letterSpacing: '-0.03em' }],
+        'display-xl': ['clamp(40px, 10vw, 100px)', { letterSpacing: '-0.03em' }],
+        'display-l': ['clamp(32px, 8vw, 68px)', { letterSpacing: '-0.03em' }],
         'h3': ['clamp(18px, 2vw, 24px)', { lineHeight: '1.4' }],
         'body': ['16px', { lineHeight: '18px' }],
         'small': ['12px', { lineHeight: '13px' }],

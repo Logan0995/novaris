@@ -5,7 +5,7 @@ import HeroBackground from "./backgrounds/HeroBackground";
 
 export default function Hero() {
   return (
-    <section className="relative w-full min-h-[100svh] flex flex-col items-center overflow-hidden pt-32 pb-24">
+    <section className="relative w-full min-h-[100svh] flex flex-col items-center overflow-x-hidden pt-32 pb-24">
       <HeroBackground />
 
       {/* Top Right Glow Node (Offset) */}
@@ -51,7 +51,10 @@ export default function Hero() {
       <style dangerouslySetInnerHTML={{__html: `
         .hero-line {
           overflow: hidden;
-          padding-bottom: 0.1em;
+          padding-top: 0.15em;
+          margin-top: -0.15em;
+          padding-bottom: 0.15em;
+          margin-bottom: -0.15em;
         }
         .hero-line span {
           display: block;
