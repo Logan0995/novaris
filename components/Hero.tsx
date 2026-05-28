@@ -16,7 +16,7 @@ export default function Hero() {
         
         {/* Eyebrow */}
         <p className="text-[11px] text-zinc-500 tracking-[0.2em] uppercase mb-8 opacity-0 animate-[fadeIn_0.8s_ease-out_0.6s_forwards]">
-          Software Studio &middot; Est. 2024
+          Software Studio &middot; Est. 2025
         </p>
 
         {/* Headline */}

@@ -48,7 +48,7 @@ const projects = [
 
 export default function Work() {
   return (
-    <section className="py-24 md:py-[160px] relative z-10" id="work">
+    <section className="py-16 md:py-[160px] relative z-10" id="work">
       <div className="max-w-[1200px] mx-auto px-6 lg:px-8">
         
         <ScrollReveal>
@@ -71,7 +71,7 @@ export default function Work() {
                 <GlassCard glowOnHover hover className="group min-h-[480px] p-0 flex flex-col lg:flex-row overflow-hidden transition-transform duration-500 ease-out hover:scale-[1.01]">
                   
                   {/* Info Section */}
-                  <div className={`w-full lg:w-1/2 p-10 md:p-14 flex flex-col justify-center relative z-10 order-2 ${isEven ? 'lg:order-1' : 'lg:order-2'}`}>
+                  <div className={`w-full lg:w-1/2 p-6 md:p-10 lg:p-14 flex flex-col justify-center relative z-10 order-2 ${isEven ? 'lg:order-1' : 'lg:order-2'}`}>
                     <p className="text-[12px] text-zinc-500 uppercase tracking-wide mb-4">
                       {project.tag}
                     </p>

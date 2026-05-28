@@ -44,7 +44,7 @@ export default function Process() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-24 md:py-[160px] relative z-10 bg-bg-surface" id="process">
+    <section ref={sectionRef} className="py-16 md:py-[160px] relative z-10 bg-bg-surface" id="process">
       <div className="max-w-[1200px] mx-auto px-6 lg:px-8">
         
         <ScrollReveal>
@@ -77,7 +77,7 @@ export default function Process() {
             />
           </svg>
 
-          <div className="grid grid-cols-1 lg:grid-cols-4 gap-12 lg:gap-8 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-4 gap-10 lg:gap-8 relative z-10">
             {steps.map((step, idx) => (
               <ScrollReveal key={step.num} delay={idx * 150} className="relative flex flex-col items-center text-center lg:items-start lg:text-left">
                 {/* Number */}

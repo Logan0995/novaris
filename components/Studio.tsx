@@ -10,7 +10,7 @@ const stats = [
 
 export default function Studio() {
   return (
-    <section className="py-24 md:py-[160px] relative z-10 overflow-hidden" id="studio">
+    <section className="py-16 md:py-[160px] relative z-10 overflow-hidden" id="studio">
       <GrainOverlay opacity={0.03} />
       <div className="studio-pulse" aria-hidden="true" />
       <div className="max-w-[1200px] mx-auto px-6 lg:px-8 relative z-10">
@@ -48,7 +48,7 @@ export default function Studio() {
 
         {/* Stat Row */}
         <ScrollReveal delay={150}>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8 pt-12 border-t border-white/5">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8 pt-12 border-t border-white/5">
             {stats.map((stat, idx) => (
               <div key={idx} className="flex flex-col">
                 <span className="text-[48px] font-display font-extrabold text-white leading-tight mb-2">

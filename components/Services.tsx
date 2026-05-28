@@ -24,7 +24,7 @@ const services = [
 
 export default function Services() {
   return (
-    <section className="py-24 md:py-[160px] relative z-10" id="services">
+    <section className="py-16 md:py-[160px] relative z-10" id="services">
       
       {/* Background Glow Node */}
       <div className="absolute top-1/2 -left-[200px] -translate-y-1/2 glow z-0" />
@@ -46,7 +46,7 @@ export default function Services() {
           {services.map((service, idx) => (
             <ScrollReveal key={service.name} delay={idx * 100}>
               <CardSpotlight className="h-full rounded-[24px]">
-                <GlassCard className="p-10 md:p-12 h-full flex flex-col justify-center">
+                <GlassCard className="p-8 md:p-10 lg:p-12 h-full flex flex-col justify-center">
                   <div className="w-[24px] h-[2px] bg-accent-blue mb-8" />
                   <h3 className="text-[20px] font-display font-semibold text-white mb-4">
                     {service.name}

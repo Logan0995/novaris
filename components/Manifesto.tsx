@@ -4,7 +4,7 @@ import GrainOverlay from "./backgrounds/GrainOverlay";
 
 export default function Manifesto() {
   return (
-    <section className="py-24 md:py-[160px] relative z-10" id="manifesto">
+    <section className="py-16 md:py-[160px] relative z-10" id="manifesto">
       <GrainOverlay opacity={0.03} />
       <div className="max-w-[1200px] mx-auto px-6 lg:px-8 relative z-10">
         
