@@ -56,14 +56,14 @@ export default function MagneticButton({ children, className = '', variant = 'pr
       animationFrameId = requestAnimationFrame(animate);
     };
 
-    button.addEventListener('mousemove', handleMouseMove);
+    button.addEventListener('mousemove', handleMouseMove as EventListener);
     button.addEventListener('mouseenter', handleMouseEnter);
     button.addEventListener('mouseleave', handleMouseLeave);
     
     animate();
 
     return () => {
-      button.removeEventListener('mousemove', handleMouseMove);
+      button.removeEventListener('mousemove', handleMouseMove as EventListener);
       button.removeEventListener('mouseenter', handleMouseEnter);
       button.removeEventListener('mouseleave', handleMouseLeave);
       cancelAnimationFrame(animationFrameId);
