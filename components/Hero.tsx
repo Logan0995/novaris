@@ -5,14 +5,14 @@ import HeroBackground from "./backgrounds/HeroBackground";
 
 export default function Hero() {
   return (
-    <section className="relative w-full min-h-[100svh] flex flex-col items-center justify-center overflow-hidden pt-32 pb-24">
+    <section className="relative w-full min-h-[100svh] flex flex-col items-center overflow-hidden pt-32 pb-24">
       <HeroBackground />
 
       {/* Top Right Glow Node (Offset) */}
       <div className="absolute top-[-150px] right-[-150px] glow z-0" />
 
       {/* Content */}
-      <div className="relative z-10 max-w-[1200px] mx-auto px-6 lg:px-8 flex flex-col items-center text-center">
+      <div className="relative z-10 max-w-[1200px] mx-auto my-auto px-6 lg:px-8 flex flex-col items-center text-center">
         
         {/* Eyebrow */}
         <p className="text-[11px] text-zinc-500 tracking-[0.2em] uppercase mb-8 opacity-0 animate-[fadeIn_0.8s_ease-out_0.6s_forwards]">
