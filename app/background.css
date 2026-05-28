@@ -1,0 +1,208 @@
+/* BACKGROUND EFFECTS LAYER (v2.0) */
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; }
+}
+
+@media (max-width: 768px) {
+  .hero-mesh, .orb, .connector-line, .studio-pulse, .footer-ring {
+    animation: none !important;
+  }
+  .footer-ring {
+    display: none;
+  }
+}
+
+/* HERO */
+@keyframes meshShift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.hero-mesh {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: linear-gradient(
+    -45deg,
+    #050505,
+    #07101a,
+    #050505,
+    #060a12,
+    #050505
+  );
+  background-size: 400% 400%;
+  animation: meshShift 18s ease infinite;
+  opacity: 1;
+}
+
+.hero-grid {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background-image: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.035) 1px,
+    transparent 1px
+  );
+  background-size: 28px 28px;
+  pointer-events: none;
+}
+
+@keyframes orbDrift1 {
+  0%   { transform: translate(0, 0) scale(1); }
+  33%  { transform: translate(-40px, 30px) scale(1.05); }
+  66%  { transform: translate(20px, -20px) scale(0.97); }
+  100% { transform: translate(0, 0) scale(1); }
+}
+
+@keyframes orbDrift2 {
+  0%   { transform: translate(0, 0) scale(1); }
+  50%  { transform: translate(30px, -50px) scale(1.08); }
+  100% { transform: translate(0, 0) scale(1); }
+}
+
+@keyframes orbDrift3 {
+  0%   { transform: translate(0, 0) scale(1); }
+  40%  { transform: translate(-20px, 40px) scale(1.03); }
+  80%  { transform: translate(10px, -15px) scale(0.98); }
+  100% { transform: translate(0, 0) scale(1); }
+}
+
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(90px);
+  pointer-events: none;
+  will-change: transform;
+}
+
+.orb-1 {
+  width: 500px; height: 500px;
+  top: -100px; right: -80px;
+  background: radial-gradient(circle, rgba(0, 122, 255, 0.11) 0%, transparent 70%);
+  animation: orbDrift1 22s ease-in-out infinite;
+  z-index: 2;
+}
+
+.orb-2 {
+  width: 400px; height: 400px;
+  top: 40%; left: -120px;
+  background: radial-gradient(circle, rgba(0, 220, 255, 0.07) 0%, transparent 70%);
+  animation: orbDrift2 28s ease-in-out infinite;
+  z-index: 2;
+}
+
+.orb-3 {
+  width: 700px; height: 700px;
+  bottom: -200px; left: 50%;
+  transform: translateX(-50%);
+  background: radial-gradient(circle, rgba(0, 80, 200, 0.06) 0%, transparent 70%);
+  animation: orbDrift3 35s ease-in-out infinite;
+  z-index: 2;
+}
+
+/* WORK CARDS */
+.work-card-grid {
+  background-image:
+    linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+.work-card-mockup {
+  transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+  will-change: transform;
+}
+
+.work-card:hover .work-card-mockup {
+  transform: scale(1.04);
+}
+
+/* PROCESS CONNECTOR */
+.connector-line {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  transition: stroke-dashoffset 1.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.connector-line.drawn {
+  stroke-dashoffset: 0;
+}
+
+/* STUDIO PULSE */
+@keyframes breathe {
+  0%   { transform: scale(1);    opacity: 0.06; }
+  50%  { transform: scale(1.12); opacity: 0.09; }
+  100% { transform: scale(1);    opacity: 0.06; }
+}
+
+.studio-pulse {
+  position: absolute;
+  width: 800px;
+  height: 800px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  border-radius: 50%;
+  background: radial-gradient(circle,
+    rgba(0, 122, 255, 0.4) 0%,
+    transparent 60%
+  );
+  filter: blur(120px);
+  animation: breathe 8s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* FOOTER RINGS & GLOW */
+.footer-glow {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: radial-gradient(circle,
+    rgba(0, 122, 255, 0.14) 0%,
+    rgba(0, 240, 255, 0.04) 40%,
+    transparent 70%
+  );
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+@keyframes ringRotate {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to   { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+.footer-ring {
+  position: absolute;
+  width: 700px;
+  height: 700px;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  border: 1px solid transparent;
+  background:
+    linear-gradient(#050505, #050505) padding-box,
+    linear-gradient(
+      135deg,
+      rgba(0, 122, 255, 0.15) 0%,
+      transparent 40%,
+      transparent 60%,
+      rgba(0, 240, 255, 0.08) 100%
+    ) border-box;
+  animation: ringRotate 20s linear infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.footer-ring-2 {
+  width: 500px;
+  height: 500px;
+  animation: ringRotate 30s linear infinite reverse;
+}

@@ -1,33 +1,70 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import './background.css';
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
+  --bg-void:        #050505;
+  --bg-deep:        #09090b;
+  --bg-surface:     #0f0f11;
+  --bg-glass:       rgba(255, 255, 255, 0.03);
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+  --border-subtle:  rgba(255, 255, 255, 0.05);
+  --border-mid:     rgba(255, 255, 255, 0.08);
+  --border-glow:    rgba(0, 170, 255, 0.15);
+
+  --text-primary:   #FFFFFF;
+  --text-secondary: #A1A1AA;
+  --text-muted:     #52525B;
+
+  --accent-blue:    #007AFF;
+  --accent-cyan:    #00F0FF;
+  --accent-grad:    linear-gradient(135deg, #007AFF 0%, #00F0FF 100%);
+  --accent-glow:    0 0 60px rgba(0, 122, 255, 0.3);
+
+  --grain-opacity:  0.035;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  color: var(--text-primary);
+  background-color: var(--bg-void);
+  font-family: var(--font-inter), system-ui, sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background-color: rgba(0, 122, 255, 0.3);
+  color: var(--text-primary);
+}
+
+@layer components {
+  .glass {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+/* Base resets & scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-void);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--bg-surface);
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
 }
